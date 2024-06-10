@@ -1,0 +1,27 @@
+//The first line of input contains a single integerT, denoting the number of test cases. The description of T test cases follows.
+//The first line of each test case contains two space-separated integers N and K, denoting the total number of players between Gi-Hun and Ali and the height of both of them respectively.
+//The second line of each test case contains N space-separated integers, denoting the heights of the players between Gi-Hun and Ali.
+
+//program
+
+
+int main(void) 
+{
+    int t,n,k;
+    scanf("%d",&t);
+    for(int i=0;i<t;i++)
+    {
+        int a,c=0;
+        scanf("%d %d",&n,&k);
+        for(int j=0;j<n;j++)
+        {
+            scanf("%d",&a);
+            if(a>k)
+            {
+                c=c+1;
+            }
+            
+        }
+        printf("%d\n",c);
+    }
+}
