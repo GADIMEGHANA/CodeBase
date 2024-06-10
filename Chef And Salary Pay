@@ -1,0 +1,38 @@
+Input Format:
+
+The first line contains an integer T denoting the number of test cases. The T test cases then follow.
+The first line of each test case contains X and Y.
+Second line contains a binary string (i.e it contains only ‘0’ / ‘1’), where '0' denotes that Chef was on leave and '1' denotes Chef was working on that day.#include <stdio.h>
+
+
+//program
+int main(void) {
+	int t;
+	scanf("%d",&t);
+	for(int i=0;i<t;i++)
+	{
+	    int x,y;
+	    char a[31];
+	    int max=0,c=0,o=0;
+	    scanf("%d %d %s",&x,&y,a);
+	    for(int i=0;a[i];i++){
+	        if(a[i]=='1')
+	        {
+	            c++;
+	            o++;
+	            if(o>max)
+	            {
+	                max=o;
+	            }
+	        }
+	        else
+	        {
+	            o=0;
+	         }
+	    }
+	    int p=c*x;
+	    int q=y*max;
+	    printf("%d\n",(p+q));
+	   }
+	return 0;
+}
