@@ -1,0 +1,25 @@
+Input Format
+
+A single string, s.
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        // Write your code here.
+        scan.close();
+        int a=0;
+        StringTokenizer n=new StringTokenizer(s," ,'!.+_@?");
+        System.out.println(n.countTokens());
+        while(n.hasMoreTokens()){
+            System.out.println(n.nextToken());
+        }
+        
+    }
+}
+
