@@ -1,0 +1,20 @@
+# Initialize an empty list to store elements
+arr = []
+
+enter elements separated by spaces
+elements = input()
+
+# Split the input string by spaces and convert each element to int (assuming integers)
+arr = list(map(int, elements.split()))
+
+
+n=len(arr)
+for i in range(len(arr)):
+    min=i
+    for j in range(i+1,n):
+        if(arr[j]<arr[min]):
+            min=j
+    arr[i],arr[min]=arr[min],arr[i]
+    
+print(arr)
+            
