@@ -1,0 +1,37 @@
+Input Format:
+
+First line with n, number of steps in the game
+Next n lines, n integers denoting outcomes of every game. Positive means winning and negative means losing that money.
+Output Format:
+
+One single integer denoting the minimum amount to start with
+
+//program
+
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int sum=0;
+        int d=0;
+        int a[]=new int[n];
+        for(int j=0;j<n;j++){
+            a[j]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+                sum+=a[i];
+            if(sum>=0){
+                d=0;
+            }
+            else {
+                d=Math.abs(sum);
+                break;
+            }
+            
+           
+        }
+        System.out.println(d);
+    }
+}
