@@ -1,0 +1,59 @@
+//program
+
+
+class LL{
+    
+    private  Node head;
+    private  Node tail;
+     int size;
+     public LL(){
+         this.size=0;
+     }
+     public void insertFirst(int value){
+         Node n=new Node(value);
+         n.next=head;
+         head=n;
+         
+         if(tail==null){
+             tail=head;
+         }
+         size+=1;
+         
+     }
+     public void display(){
+         Node temp=head;
+         while(temp!=null){
+             System.out.print(temp.value+"-->");
+             temp=temp.next;
+         }
+         System.out.println("END");
+     }
+     
+     
+    private  class Node{
+       private int value;
+        private Node next;
+    
+    private  Node(int value){
+        this.value=value;
+    }
+    private Node(int value, Node next){
+        this.value=value;
+        this.next=next;
+    }
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        LL li=new LL();
+        li.insertFirst(2);
+        li.insertFirst(3);
+        li.insertFirst(12);
+        li.insertFirst(6);
+        li.display();
+        
+        
+        
+        
+    }
+}
