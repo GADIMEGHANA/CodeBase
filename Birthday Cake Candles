@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+class Result {
+
+    public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter the number of elements");
+    int n=sc.nextInt();
+    
+    List<Integer> candles=new ArrayList<>();
+    System.out.println("enter the elements:");
+    for(int j=0;j<n;j++){
+        int c=sc.nextInt();
+        candles.add(c);
+    }
+    System.out.println(candles);
+    Map<Integer ,Integer> m=new HashMap<>();
+    for(int i=0;i<candles.size();i++){
+        if(m.containsKey(candles.get(i))){
+            int co=m.get(candles.get(i));
+            co=co+1;
+            m.put(candles.get(i),co);
+        }
+        else{
+            m.put(candles.get(i), 1);
+        }
+        
+    }
+
+     for (Map.Entry<Integer, Integer> me : 
+             m.entrySet()) { 
+  
+            // Printing keys 
+            System.out.print(me.getKey() + ": " +me.getValue()+"  "); 
+         
+             }
+           }
+
+}
