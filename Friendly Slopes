@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        float xa=sc.nextInt();
+        float  xb=sc.nextInt();
+        float  ya=sc.nextInt();
+        float  yb=sc.nextInt();
+        float  xa1=sc.nextInt();
+        float  xb1=sc.nextInt();
+        float  ya1=sc.nextInt();
+        float  yb1=sc.nextInt();
+        float c=(yb-xb)/(ya-xa);
+        float d=(yb1-xb1)/(ya1-xa1);
+        if(c==d){
+            System.out.println("yes");
+        }
+        else{
+            System.out.println("no");
+            
+        }
+    }
+}
