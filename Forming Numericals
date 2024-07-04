@@ -1,0 +1,38 @@
+N = 1
+1
+
+N = 2
+2 2 2
+2 1 2
+2 2 2
+
+N = 3
+
+3 3 3 3 3
+3 2 2 2 3
+3 2 1 2 3
+3 2 2 2 3
+3 3 3 3 3
+
+and so on.
+
+//program
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        
+        // Upper half
+        for (int i = 0; i < 2 * N - 1; i++) {
+            for (int j = 0; j < 2 * N - 1; j++) {
+                System.out.print(Math.max(Math.abs(N - 1 - i), Math.abs(N - 1 - j)) + 1 + " ");
+            }
+            System.out.println();
+        }
+        
+        scanner.close();
+    }
+}
