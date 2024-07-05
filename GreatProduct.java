@@ -1,7 +1,6 @@
-import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class GreatProduct {
 
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
@@ -13,6 +12,7 @@ public class Solution {
             int m=sc.nextInt();
             l.add(m);
         }
+        sc.close();
         int j=1;
         while(j<=3){
         int d=Collections.max(l);
