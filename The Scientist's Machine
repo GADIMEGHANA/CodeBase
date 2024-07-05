@@ -1,0 +1,65 @@
+Input Format
+
+5 integers denoting no.of forward steps, no.of backward steps, forward ditch position, backward ditch position, and time comple single step
+
+Constraints
+
+Every value will range from 1-100
+
+Output Format
+
+No if the robo does not falls in ditch.
+
+F integer. F denotes forward ditch and integer is the time taken by robo to fall in ditch
+
+B integer. B denotes backward ditch and integer is the time taken by robo to fall in ditch
+
+//program
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        int fs=sc.nextInt();
+        int bs=sc.nextInt();
+        int fd=sc.nextInt();
+        int bd=sc.nextInt();
+        int t=sc.nextInt();
+        int step=0;
+        int z=0;
+        int i=1;
+        String s="";
+        while(i>0){
+            if(fs==bs){
+                System.out.println("NO");
+                break;
+            }            
+        if(fs<fd){
+            bd+=fs;
+            fd-=fs;
+            step+=fs;
+
+        }else{
+            step+=fd;
+            s="F";
+            z=step*t;
+            System.out.println(s+" "+z);
+            break;
+        }
+        if(bs<bd){
+            fd+=bs;
+            bd-=bs;
+            step+=bs;
+        }else{
+            step+=bd;
+            s="B";
+            z=step*t;
+            System.out.println(s+" "+z);
+            break;
+        }
+        i++;
+        }
+    }
+}
+
