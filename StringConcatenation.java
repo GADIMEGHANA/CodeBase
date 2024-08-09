@@ -1,6 +1,5 @@
 import java.util.*;
-
-public class StringConcatenantion {
+ class StringConcatenantion {
   
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
