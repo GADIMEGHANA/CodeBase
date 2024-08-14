@@ -37,5 +37,6 @@ class Main
           System.out.println(s);
         
         }
+        sc.close();
     }
 }
