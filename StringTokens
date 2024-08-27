@@ -1,0 +1,19 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int m=0;
+        String str="";
+        StringTokenizer st=new StringTokenizer(s,".");
+        while(st.hasMoreTokens()){
+            String sb=st.nextToken();
+            int n=sb.length();
+            if(n>m){
+                 m=n;
+                 str=sb;
+            }
+        }
+        System.out.println(str);
+    }
+}
