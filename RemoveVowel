@@ -1,0 +1,25 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        //System.out.println("Try programiz.pro");
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        StringBuilder sb=new StringBuilder();
+        sb.append(s.charAt(0));
+        ArrayList<Character> a=new ArrayList<>(Arrays.asList('a','e','i','o','u'));
+        for(int i=1;i<s.length()-1;i++){
+            char ch=s.charAt(i);
+            char chi=s.charAt(i-1);
+            char chj=s.charAt(i+1);
+            if(!a.contains(chi) && a.contains(ch) && !a.contains(chj)){
+                continue;
+            }
+            else{
+                sb.append(ch);
+            }
+        }
+         sb.append(s.charAt(s.length()-1));
+        System.out.println(sb);
+        sc.close();
+    }
+}
