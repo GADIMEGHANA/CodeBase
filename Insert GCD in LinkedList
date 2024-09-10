@@ -1,0 +1,105 @@
+import java.util.Scanner;
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode() {}
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+public class Solution {
+
+    // Method to insert GCD nodes between adjacent nodes
+    public ListNode insertGreatestCommonDivisors(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        ListNode node1 = head;
+        ListNode node2 = head.next;
+
+        while (node2 != null) {
+            int gcdValue = calculateGCD(node1.val, node2.val);
+            ListNode gcdNode = new ListNode(gcdValue);
+
+            // Insert the GCD node between node1 and node2
+            node1.next = gcdNode;
+            gcdNode.next = node2;
+
+            // Move to the next pair of nodes
+            node1 = node2;
+            node2 = node2.next;
+        }
+
+        return head;
+    }
+    private int calculateGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    // Method to create a linked list from an array of integers
+    public ListNode createLinkedList(int[] values) {
+        if (values == null || values.length == 0) {
+            return null;
+        }
+
+        ListNode head = new ListNode(values[0]);
+        ListNode current = head;
+
+        for (int i = 1; i < values.length; i++) {
+            current.next = new ListNode(values[i]);
+            current = current.next;
+        }
+
+        return head;
+    }
+
+    // Method to print the linked list
+    public void printLinkedList(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.val + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Solution solution = new Solution();
+
+        // Taking dynamic input from the use
+        int n = scanner.nextInt();
+
+        // If n is less than or equal to 0, no linked list can be created
+        if (n <= 0) {
+            return;
+        }
+
+        int[] inputValues = new int[n];
+        for (int i = 0; i < n; i++) {
+            inputValues[i] = scanner.nextInt();
+        }
+
+        // Create the linked list from the input values
+        ListNode head = solution.createLinkedList(inputValues);
+        ListNode modifiedHead = solution.insertGreatestCommonDivisors(head);
+
+        System.out.println("Modified list with GCDs inserted:");
+        solution.printLinkedList(modifiedHead);
+
+        scanner.close();
+    }
+}
