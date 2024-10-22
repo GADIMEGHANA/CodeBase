@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+class Solution {
+   public int findClosestNumber(int[] nums) {
+       int min = Integer.MAX_VALUE;
+       int result = 0;
+       
+       for(int a : nums) {
+           int distance = Math.abs(a);
+           
+           if(distance < min) {
+               min = distance;
+               result = a;
+           }
+           else if(distance == min && a > result) {
+               result = a;
+           }
+       }
+       
+       return result;
+   }
+   
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       System.out.print("Enter array size: ");
+       int n = sc.nextInt();
+       
+       int[] nums = new int[n];
+       System.out.println("Enter array elements:");
+       for(int i = 0; i < n; i++) {
+           nums[i] = sc.nextInt();
+       }
+       
+       Solution sol = new Solution();
+       int closest = sol.findClosestNumber(nums);
+       System.out.println("Closest number to zero: " + closest);
+       
+       sc.close();
+   }
+}
