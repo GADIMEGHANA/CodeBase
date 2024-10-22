@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+class Solution {
+   public String mergeAlternately(String word1, String word2) {
+       int t = word1.length() <= word2.length() ? word1.length() : word2.length();
+       StringBuilder s = new StringBuilder();
+       int n = 0;
+       String st = "";
+       
+       for(int i = 0; i < t; i++) {
+           s.append(word1.charAt(i));
+           s.append(word2.charAt(i));
+       }
+       
+       if(t < word1.length()) {
+           n = word1.length();
+           st = word1;
+       }
+       else {
+           n = word2.length();
+           st = word2;
+       }
+       
+       for(int i = t; i < n; i++) {
+           s.append(st.charAt(i));
+       }
+       
+       return s.toString();
+   }
+
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       
+       System.out.print("Enter first string: ");
+       String word1 = sc.nextLine();
+       
+       System.out.print("Enter second string: ");
+       String word2 = sc.nextLine();
+       
+       Solution sol = new Solution();
+       String merged = sol.mergeAlternately(word1, word2);
+       System.out.println("Merged string: " + merged);
+       
+       sc.close();
+   }
+}
