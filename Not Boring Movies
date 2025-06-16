@@ -1,0 +1,2 @@
+select * from cinema c1
+where c1.id%2!=0 and description!="boring"  order by c1.rating desc
